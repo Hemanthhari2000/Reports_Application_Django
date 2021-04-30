@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Detail {{object.transaction_id}}{% endblock title %}
+
+{% block content %}
+
+    <div class="row mt-3 mb-3">
+        <div class="col-3">
+            <img src="{{ object.customer.logo.url }}" alt="{{ object.customer.name }}" class="img-border-circle">
+        </div>
+        <div class="col-9">
+            <ul>
+                <li>Transaction Id: <b>{{ object.transaction_id }}</b></li>
+                <li>Salesman: <b>{{ object.salesman|capfirst }}</b></li>
+            </ul>
+        </div>
+    </div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Product</th>
+      <th scope="col">Customer</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for pos in object.get_positions %}
+    
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ pos.product.name }}</td>
+      <td>{{ pos.get_customer_name }}</td>
+      <td> {{ pos.quantity }} </td>
+      <td> {{pos.price }} </td>
+    </tr>  
+
+  {% endfor %}
+  </tbody>
+</table>
+
+
+
+
+
+{% endblock content %}  

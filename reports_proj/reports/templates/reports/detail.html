@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{object.name}}
+{% endblock title %}
+
+{% block content %}
+
+    <div>
+        <h2> Detail Report </h2>
+        <hr>
+        
+        <h3> Chart </h3> 
+        {% if object.image %}
+            <img src = {{ object.image.url }} class = "img-fluid"> </img>
+        {% endif %}
+        <br><br>
+
+        <h3>Remarks</h3>
+        <div class = "ms-5 ps-4 pt-2" >{{ object.remarks }} </div>
+        <br>
+
+        <h3> User </h3>
+        <div class = "ms-5 ps-4 pt-2" >
+            <p>User: <b>{{object.name}}</b></p>
+            <p>Created: <b>{{object.created}}</p>
+        </div>
+
+    </div>
+
+{% endblock content %}

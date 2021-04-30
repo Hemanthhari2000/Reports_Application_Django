@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title></title>
+  <style>
+    .remarks, 
+    .user{
+        margin-left: 70px;
+    }
+  </style>
+</head>
+<body>
+    <h1> Report </h1>
+    <hr>
+    <br>
+    <h3> Chart: </h3> 
+
+    {% if object.image %}
+        <img src = {{ object.image.path }} class = "img-fluid"> </img>
+    {% endif %}
+    
+    <br>
+    <br>
+
+    <h3>Remarks: </h3>
+    <div class = "remarks" >{{ object.remarks }} </div>
+    <br>
+
+    <h3> User: </h3>
+    <div class = "user" >
+        <p>User: <b>{{object.author.user.username|upper}}</b></p>
+        <p>Created: <b>{{object.created}}</p>
+    </div>
+
+</body>
+</html>

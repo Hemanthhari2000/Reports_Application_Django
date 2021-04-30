@@ -1,0 +1,41 @@
+.dz {
+    border-style: dashed;
+    border-radius: 5px;
+    border-color: rgb(5, 146, 0);
+    transition: .5s;
+}
+
+.dz:hover{
+    background-color: #f5f5f5;
+}
+
+.avatar-sm{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-sm{
+    height: 40px;
+    width: auto;
+    object-fit: cover;
+}
+
+.img-border-circle{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: content-box;
+}
